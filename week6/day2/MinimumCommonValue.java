@@ -2,6 +2,8 @@ package week6.day2;
 
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 public class MinimumCommonValue {
 	/**
 	 * Given two integer arrays nums1 and nums2, sorted in non-decreasing order, return the minimum integer common to both arrays. If there is no common integer amongst nums1 and nums2, return -1.
@@ -16,32 +18,54 @@ Output: 2
 	 * 
 	 */
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void example() {
 	
 		int[] nums1= {1,2,3};
 		int[] nums2 = {2,4};
-		minimumCommonValue(nums1,nums2);
+		Assert.assertEquals(2, minimumCommonValue(nums1,nums2));
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void example1() {
 	
-		int[] nums1= {1,2,3,6};
+		int[] nums1= {1,3,6};
 		int[] nums2 = {2,3,4,5};
-		minimumCommonValue(nums1,nums2);
+		Assert.assertEquals(3, minimumCommonValue(nums1,nums2));
 		
 	}
-
-	private void minimumCommonValue(int[] nums1, int[] nums2) {
-		for(int i=0;i<nums1.length-1;i++)
+	@SuppressWarnings("deprecation")
+	@Test
+	public void example2() {
+	
+		int[] nums1= {1,3,6};
+		int[] nums2 = {2,4,5};
+		Assert.assertEquals(-1, minimumCommonValue(nums1,nums2));
+		
+	}
+	
+	private int minimumCommonValue(int[] nums1, int[] nums2) {
+		
+		int ptr1 =0, ptr2=0;
+		while(ptr1<nums1.length && ptr2< nums2.length)
 		{
-			for(int j=0;j<nums2.length;j++) {
-			   if(nums1[i]==nums2[j])
-				System.out.println(nums1[i]);
+			if(nums1[ptr1]==nums2[ptr2]) {
+				return nums1[ptr1];
+			
+			}
+			if(nums1[ptr1]<nums2[ptr2])
+			{
+				ptr1++;
+			} else { 
+				ptr2++;
 			}
 		}
+		return -1;
+		
+		
 		
 	}
 
