@@ -44,19 +44,19 @@ A substring is a contiguous sequence of characters in a string.
 		int count =0, left = 0, right=0;
 		Map<Character, Integer> inputMap = new HashMap<>();
 		for(int i=0; i<3;i++) {
-			inputMap.put(s.charAt(i), inputMap.getOrDefault(s.charAt(i), 0)+1);
+			inputMap.put(s.charAt(i), inputMap.getOrDefault(s.charAt(i), 0)+1);//xyzzaz
 			right++;
 		}
 		
-		if(inputMap.size()==3) count++;
+		if(inputMap.size()==3) count++;//1
 		
 		while(left<s.length()-3)
 		{
-			if(inputMap.get(s.charAt(left)) > 1)
+			if(inputMap.get(s.charAt(left)) > 1)//REMOVE
 				{
 				 inputMap.put(s.charAt(left), inputMap.getOrDefault(s.charAt(left), 0)-1);
 				}
-			else inputMap.remove(s.charAt(left));
+			else inputMap.remove(s.charAt(left));//REMOVE
 			inputMap.put(s.charAt(right), inputMap.getOrDefault(s.charAt(right), 0)+1);
 			
 			if(inputMap.size()==3) count++;
@@ -66,5 +66,6 @@ A substring is a contiguous sequence of characters in a string.
 		
 		return count;
 	}
+	
 
 }
