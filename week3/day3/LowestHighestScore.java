@@ -23,14 +23,14 @@ Return the minimum possible difference.
 	public void example() {
 		int[] arr= {7,10,30,40,70,80};
 		int k=3;
-		lowestHighest(arr,k);
+		System.out.println(lowestHighest(arr,k));
 	}
 		
 		@Test
 		public void example1() {
 			int[] arr= {9,4,1,7};
 			int k=2;
-			lowestHighest(arr,k);
+			System.out.println(lowestHighest(arr,k));
 		
 
 }

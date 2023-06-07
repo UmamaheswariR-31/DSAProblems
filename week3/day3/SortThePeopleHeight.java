@@ -27,29 +27,33 @@ Return names sorted in descending order by the people's heights.
 	@Test
 	public void example() {
 		String[] names= {"Mary","John","Emma"};
-		int[] heights = {155,185,150};
+		int[] heights = {180,165,170};
 		sortThePeopleHeight(names,heights);
 	}
 
 	private void sortThePeopleHeight(String[] names, int[] heights) {
 		int nptr1=0,hptr2=0;
-		Map<Integer,String> hm=new HashMap<>(); //TreeMap-->Doubt
+		Map<Integer,String> hm=new TreeMap<>(); //TreeMap-->Doubt
 		
 		while(nptr1<names.length)
 		{
 			hm.put(heights[hptr2], names[nptr1]);
 			hptr2++;
 			nptr1++;
-			System.out.println(hm);
+			//System.out.println(hm);
 		}
 		
+		for(int i=0;i<=hm.size();i++) {
+			//System.out.println(hm.entrySet());
+			System.out.println(hm.get(heights[i]));
+		}
 	 //for(int i=0;i<names.length;i++) {
 		//	hm.put(heights[i], names[i]);
 	//	}
 		
 		System.out.println(hm.size());
-		
-		Arrays.sort(heights);
+		//heights;
+		//Arrays.sort(heights);
 		
 	}
 
