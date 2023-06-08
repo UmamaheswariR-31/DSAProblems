@@ -58,7 +58,7 @@ private int kBeautyOfNumber(int num, int k) {
 	//  System.out.println(s);
 	//int i=0, j=k-1, sum=0;
 	  
-	//String n="";
+	String n="";
        for(int i=0;i<s.length()-1;i++) {
 		String s1 = s.substring(i, i+k);
 		//System.out.println(s1);
