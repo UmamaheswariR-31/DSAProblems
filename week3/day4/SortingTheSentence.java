@@ -2,6 +2,7 @@ package week3.day4;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.junit.Test;
 
@@ -26,6 +27,7 @@ Given a shuffled sentence s containing no more than 9 words, reconstruct and ret
 	 * PseudoCode:
 	 * Sp
 	 * 
+	 *Time com: O(n)
 	 */
 	@Test
 	public void example() {
@@ -36,19 +38,27 @@ Given a shuffled sentence s containing no more than 9 words, reconstruct and ret
 	private void sortingTheSentence(String s) {
 		
 		String[] strArr = s.split(" ");
-		for(int i=0;i<=strArr.length;i++) {
-			//System.out.println(strArr[i]);
-			char[] ch = strArr[i].toCharArray();
-			System.out.println(ch.length);
-			int i=ch.lengthl
+		TreeMap<Integer,String> hm =new TreeMap<Integer,String>();
+		for(int i=0;i<=strArr.length-1;i++) {
+			String s1 = strArr[i]; //is2--3//sentence4
+			int num= s1.charAt(s1.length()-1);//Ascci
+			String sub = s1.substring(0, s1.length()-1);
 			
-			Map<Integer,String> hm =new HashMap<>();
 			
-			hm.put(ch[i-1], strArr[i].substring(beginIndex))
+			
+			hm.put(num,sub);
 			
 		}
 		
+		System.out.println(hm);
+		String op ="";
+		for(Map.Entry<Integer, String> temp : hm.entrySet())
+	{ 
+			//System.out.println(temp.getValue());
+			op=op+temp.getValue()+" ";
+		
 	}
-	
+	System.out.println(op.trim());
+}
 }
 

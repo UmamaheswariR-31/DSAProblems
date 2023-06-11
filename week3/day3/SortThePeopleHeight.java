@@ -45,13 +45,16 @@ Return names sorted in descending order by the people's heights.
 		
 		for(int i=0;i<=hm.size();i++) {
 			//System.out.println(hm.entrySet());
-			System.out.println(hm.get(heights[i]));
+			//System.out.println(hm.get(heights[i]));
 		}
 	 //for(int i=0;i<names.length;i++) {
 		//	hm.put(heights[i], names[i]);
 	//	}
 		
-		System.out.println(hm.size());
+		for(Map.Entry<Integer, String> temp: hm.entrySet()) {
+			System.out.println(temp.getValue());
+		}
+		//System.out.println(hm.size());
 		//heights;
 		//Arrays.sort(heights);
 		
